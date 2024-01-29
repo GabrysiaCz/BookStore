@@ -1,0 +1,36 @@
+﻿@page
+@model BookStore_Razor.Pages.Kategorie.CreateModel
+
+<form method="post" asp-page="/Kategorie/Create">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Utwórz nową kategorię</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        <div class="mb-3 row p-1">
+            <label asp-for="Kategoria.Nazwa" class="p-0"></label>
+            <input asp-for="Kategoria.Nazwa" class="form-control" />
+            <span asp-validation-for="Kategoria.Nazwa" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Kategoria.KolejnośćWyświetlania" class="p-0"></label>
+            <input asp-for="Kategoria.KolejnośćWyświetlania" class="form-control" />
+            <span asp-validation-for="Kategoria.KolejnośćWyświetlania" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Utwórz</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a class="btn btn-outline-secondary form-control" asp-page="/Kategorie/Index">Powrót do listy</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Skrypty{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
